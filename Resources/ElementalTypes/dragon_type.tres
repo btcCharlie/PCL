@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ElementalType" load_steps=2 format=3 uid="uid://ber2rgtqp8h1w"]
+
+[ext_resource type="Script" path="res://Resources/ElementalTypes/elemental_type.gd" id="1_fd1l6"]
+
+[resource]
+script = ExtResource("1_fd1l6")
+name = 4
+color = Color(0.654902, 0.545098, 0.933333, 1)
+vulnerable_against = Array[int]([4])
+resistant_against = Array[int]([0, 1, 2])
+immune_against = Array[int]([])
