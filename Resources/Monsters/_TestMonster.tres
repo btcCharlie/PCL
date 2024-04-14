@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Monster" load_steps=5 format=3 uid="uid://dexhhswesa771"]
+
+[ext_resource type="Texture2D" uid="uid://dntmtt8ic3r3" path="res://Art/Monsters/_TestMonster/test_monster_ally.png" id="1_uwlmc"]
+[ext_resource type="Texture2D" uid="uid://brpnd0kqx2f15" path="res://Art/Monsters/_TestMonster/test_monster_foe.png" id="2_vp3vt"]
+[ext_resource type="Script" path="res://Resources/Monsters/Monster.gd" id="3_45sgl"]
+[ext_resource type="Resource" uid="uid://d1uiajltgi1d4" path="res://Resources/ElementalTypes/fire_type.tres" id="4_706fd"]
+
+[resource]
+script = ExtResource("3_45sgl")
+name = "Test Monster"
+type = Array[Resource("res://Resources/ElementalTypes/elemental_type.gd")]([ExtResource("4_706fd")])
+ally_graphic = ExtResource("1_uwlmc")
+foe_graphic = ExtResource("2_vp3vt")
+attack = 10
+spec_attack = 10
+defense = 10
+spec_defense = 10
+speed = 10
+max_health = 20
+max_stress = 10
