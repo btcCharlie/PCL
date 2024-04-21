@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfqstd01omuur"]
+[gd_scene load_steps=3 format=3 uid="uid://bfqstd01omuur"]
 
 [ext_resource type="PackedScene" uid="uid://pwg5ra4a4k4o" path="res://UI/main_menu.tscn" id="1_eb0bu"]
+[ext_resource type="PackedScene" uid="uid://cme31m4og8mcw" path="res://Scenes/Battle/battle.tscn" id="2_w1vue"]
 
 [node name="Game" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MainMenu" parent="CanvasLayer" instance=ExtResource("1_eb0bu")]
+
+[node name="Battle" parent="." instance=ExtResource("2_w1vue")]
