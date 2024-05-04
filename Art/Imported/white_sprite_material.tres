@@ -1,6 +1,7 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://d30aqi80c1nrc"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cviwf4lhdsih6"]
 
-[ext_resource type="Shader" path="res://art/white_sprite_material.gdshader" id="1_ghqce"]
+[ext_resource type="Shader" path="res://Art/Imported/white_sprite_material.gdshader" id="1_f3gwi"]
 
 [resource]
-shader = ExtResource("1_ghqce")
+render_priority = 0
+shader = ExtResource("1_f3gwi")
