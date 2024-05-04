@@ -25,6 +25,10 @@ run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Interface="*res://Resources/interface.gd"
+
 [dotnet]
 
 project/assembly_name="Pokeclone"
