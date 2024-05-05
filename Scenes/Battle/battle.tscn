@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cme31m4og8mcw"]
+[gd_scene load_steps=10 format=3 uid="uid://cme31m4og8mcw"]
 
 [ext_resource type="Texture2D" uid="uid://c35a718a7igl4" path="res://Art/rounded_rect_shaded_transparent.png" id="1_an2w8"]
 [ext_resource type="Theme" uid="uid://ct0ayhasjniej" path="res://UI/Themes/default_theme.tres" id="1_u1xbx"]
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Art/Imported/background.png" id="3_6ajeg"]
+[ext_resource type="Texture2D" uid="uid://bv2wpbh3uv4x3" path="res://Art/Imported/tile_0109.png" id="4_ju13f"]
+[ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://Art/Imported/tile_0110.png" id="5_yr1yw"]
+[ext_resource type="PackedScene" uid="uid://br658er6cpnr1" path="res://UI/card_move_ui.tscn" id="6_30oq4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p841q"]
 draw_center = false
@@ -16,6 +19,9 @@ corner_detail = 20
 color = Color(0.454902, 0.454902, 0.454902, 1)
 thickness = 2
 vertical = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txyuv"]
+size = Vector2(512, 180)
 
 [node name="Battle" type="Node2D"]
 
@@ -143,3 +149,43 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_6ajeg")
 centered = false
 metadata/_edit_lock_ = true
+
+[node name="Ally" type="Sprite2D" parent="."]
+position = Vector2(108, 153)
+scale = Vector2(2, 2)
+texture = ExtResource("4_ju13f")
+
+[node name="Enemy" type="Sprite2D" parent="."]
+position = Vector2(370, 157)
+scale = Vector2(2, 2)
+texture = ExtResource("5_yr1yw")
+
+[node name="CardDropArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
+position = Vector2(256, 90)
+shape = SubResource("RectangleShape2D_txyuv")
+
+[node name="BattleUI" type="CanvasLayer" parent="."]
+
+[node name="Hand" type="HBoxContainer" parent="BattleUI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -79.0
+offset_top = -70.0
+offset_right = 171.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+
+[node name="CardMoveUI" parent="BattleUI/Hand" instance=ExtResource("6_30oq4")]
+layout_mode = 2
+
+[node name="CardMoveUI2" parent="BattleUI/Hand" instance=ExtResource("6_30oq4")]
+layout_mode = 2
+
+[node name="CardMoveUI3" parent="BattleUI/Hand" instance=ExtResource("6_30oq4")]
+layout_mode = 2

@@ -4,7 +4,7 @@
 
 [resource]
 default_font = ExtResource("1_arnk2")
-default_font_size = 12
+default_font_size = 10
 MarginContainer/constants/margin_bottom = 12
 MarginContainer/constants/margin_left = 12
 MarginContainer/constants/margin_right = 12

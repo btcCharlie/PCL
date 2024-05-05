@@ -49,6 +49,11 @@ enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg", "res:
 
 theme/custom="res://UI/Themes/default_theme.tres"
 
+[layer_names]
+
+2d_physics/layer_1="card_target_selector"
+2d_physics/layer_2="card_drop_area"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
