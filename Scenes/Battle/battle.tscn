@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Art/Imported/background.png" id="3_6ajeg"]
 [ext_resource type="Texture2D" uid="uid://bv2wpbh3uv4x3" path="res://Art/Imported/tile_0109.png" id="4_ju13f"]
 [ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://Art/Imported/tile_0110.png" id="5_yr1yw"]
-[ext_resource type="PackedScene" uid="uid://br658er6cpnr1" path="res://UI/card_move_ui.tscn" id="6_30oq4"]
+[ext_resource type="PackedScene" uid="uid://br658er6cpnr1" path="res://UI/card_ui/card_move_ui.tscn" id="6_30oq4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p841q"]
 draw_center = false
@@ -161,12 +161,13 @@ scale = Vector2(2, 2)
 texture = ExtResource("5_yr1yw")
 
 [node name="CardDropArea" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
 position = Vector2(256, 90)
 shape = SubResource("RectangleShape2D_txyuv")
 
-[node name="BattleUI" type="CanvasLayer" parent="."]
+[node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 
 [node name="Hand" type="HBoxContainer" parent="BattleUI"]
 anchors_preset = 7
@@ -174,12 +175,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -79.0
+offset_left = -125.0
 offset_top = -70.0
-offset_right = 171.0
+offset_right = 125.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
+alignment = 1
 
 [node name="CardMoveUI" parent="BattleUI/Hand" instance=ExtResource("6_30oq4")]
 layout_mode = 2
