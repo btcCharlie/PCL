@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Move" load_steps=3 format=3 uid="uid://perhm5coxmrx"]
+
+[ext_resource type="Resource" uid="uid://ccj5r3nu0o7m0" path="res://assets/elemental_types/normal_type.tres" id="1_c8nhf"]
+[ext_resource type="Script" path="res://resources/move.gd" id="1_l06ah"]
+
+[resource]
+script = ExtResource("1_l06ah")
+id = "attack_tackle"
+type = 0
+target = 3
+element = ExtResource("1_c8nhf")

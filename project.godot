@@ -27,7 +27,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Interface="*res://resources/interface.gd"
+Interface="*res://global/interface.gd"
+Events="*res://global/events.gd"
 
 [display]
 
@@ -66,6 +67,7 @@ right_mouse={
 
 2d_physics/layer_1="card_target_selector"
 2d_physics/layer_2="card_drop_area"
+2d_physics/layer_3="enemies"
 
 [rendering]
 
