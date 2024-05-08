@@ -48,7 +48,7 @@ enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg", "res:
 
 [gui]
 
-theme/custom="res://ui/Themes/default_theme.tres"
+theme/custom="res://ui/themes/default_theme.tres"
 
 [input]
 

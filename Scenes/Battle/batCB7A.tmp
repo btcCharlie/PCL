@@ -1,13 +1,13 @@
 [gd_scene load_steps=15 format=3 uid="uid://cme31m4og8mcw"]
 
 [ext_resource type="Texture2D" uid="uid://c35a718a7igl4" path="res://Art/rounded_rect_shaded_transparent.png" id="1_2id8t"]
-[ext_resource type="Theme" uid="uid://ct0ayhasjniej" path="res://ui/themes/default_theme.tres" id="2_cv1e7"]
+[ext_resource type="Theme" uid="uid://ct0ayhasjniej" path="res://UI/Themes/default_theme.tres" id="2_cv1e7"]
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Art/Imported/background.png" id="3_hd1ks"]
 [ext_resource type="Texture2D" uid="uid://bv2wpbh3uv4x3" path="res://Art/Imported/tile_0109.png" id="4_ph0ip"]
 [ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://Art/Imported/tile_0110.png" id="5_ld4qd"]
-[ext_resource type="PackedScene" uid="uid://ceb38uao8h1nm" path="res://scenes/card_target_selector/card_target_selector.tscn" id="6_47rg2"]
+[ext_resource type="PackedScene" uid="uid://ceb38uao8h1nm" path="res://Scenes/card_target_selector/card_target_selector.tscn" id="6_47rg2"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="6_nuw5j"]
-[ext_resource type="PackedScene" uid="uid://br658er6cpnr1" path="res://scenes/card_ui/card_move_ui.tscn" id="7_p3wcs"]
+[ext_resource type="PackedScene" uid="uid://br658er6cpnr1" path="res://Scenes/card_ui/card_move_ui.tscn" id="7_p3wcs"]
 [ext_resource type="Resource" uid="uid://perhm5coxmrx" path="res://assets/moves/attack_tackle.tres" id="8_jqecg"]
 [ext_resource type="Resource" uid="uid://bvyqyvodhxgxc" path="res://assets/moves/skill_heal.tres" id="9_6xmeg"]
 
