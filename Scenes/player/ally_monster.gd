@@ -9,11 +9,6 @@ extends Node2D
 var implements := [I.Damageable]
 
 
-func _ready() -> void:
-	await get_tree().create_timer(4).timeout
-	take_damage(8)
-	
-
 func set_character_stats(value: Stats) -> void:
 	stats = value.create_instance()
 	print(stats)

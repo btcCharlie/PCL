@@ -173,7 +173,6 @@ position = Vector2(96, 127)
 stats = ExtResource("6_jvgjy")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("6_47rg2")]
-position = Vector2(428, 151)
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 
