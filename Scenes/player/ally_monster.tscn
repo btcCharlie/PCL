@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://u486gtfkjv5m"]
+
+[ext_resource type="Script" path="res://scenes/player/ally_monster.gd" id="1_afqpa"]
+[ext_resource type="Texture2D" uid="uid://bv2wpbh3uv4x3" path="res://Art/Imported/tile_0109.png" id="1_nou7a"]
+[ext_resource type="PackedScene" uid="uid://gxhwqsgnu8lq" path="res://scenes/ui/stats_ui.tscn" id="2_i6krf"]
+
+[node name="AllyMonster" type="Node2D" groups=["ally"]]
+script = ExtResource("1_afqpa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_nou7a")
+
+[node name="StatsUI" parent="." instance=ExtResource("2_i6krf")]
+offset_top = 24.0
+offset_bottom = 64.0

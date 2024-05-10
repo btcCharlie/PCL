@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MoveSet" load_steps=4 format=3 uid="uid://b3atj24hwtj5b"]
+
+[ext_resource type="Resource" uid="uid://perhm5coxmrx" path="res://assets/moves/attack_tackle.tres" id="1_bdmfq"]
+[ext_resource type="Script" path="res://resources/move_set.gd" id="1_v5bux"]
+[ext_resource type="Resource" uid="uid://bvyqyvodhxgxc" path="res://assets/moves/skill_heal.tres" id="2_neapk"]
+
+[resource]
+script = ExtResource("1_v5bux")
+moves = Array[Resource("res://resources/move.gd")]([ExtResource("1_bdmfq"), ExtResource("2_neapk")])

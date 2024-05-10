@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://gxhwqsgnu8lq"]
+
+[ext_resource type="Texture2D" uid="uid://dmnh5xxe2xne0" path="res://Art/Imported/player_heart.png" id="1_we3va"]
+[ext_resource type="Script" path="res://scenes/ui/stats_ui.gd" id="1_xovpy"]
+[ext_resource type="Texture2D" uid="uid://dytq0eumwvky6" path="res://Art/Imported/tile_0074.png" id="2_gdk32"]
+
+[node name="StatsUI" type="VBoxContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.0
+offset_right = 70.0
+offset_bottom = 40.0
+grow_horizontal = 2
+script = ExtResource("1_xovpy")
+
+[node name="Health" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HealthBar" type="ProgressBar" parent="Health"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+step = 1.0
+value = 20.0
+
+[node name="HealthLabel" type="Label" parent="Health"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "100"
+
+[node name="HealthIcon" type="TextureRect" parent="Health"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("1_we3va")
+stretch_mode = 5
+
+[node name="Stress" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="StressBar" type="ProgressBar" parent="Stress"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+step = 1.0
+value = 20.0
+
+[node name="StressLabel" type="Label" parent="Stress"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "100"
+
+[node name="StressIcon" type="TextureRect" parent="Stress"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("2_gdk32")
+stretch_mode = 5

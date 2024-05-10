@@ -27,7 +27,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Interface="*res://global/interface.gd"
+I="*res://global/interface.gd"
 Events="*res://global/events.gd"
 
 [display]
