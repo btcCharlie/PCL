@@ -41,7 +41,7 @@ func take_damage(damage : int) -> void:
 	if damage <= 0:
 		return
 	self.health -= damage
-	self.stress += damage / 2
+	self.stress += roundi(damage / 2.0)
 	
 
 func heal(amount : int) -> void:

@@ -14,7 +14,7 @@ func _ready() -> void:
 	Events.move_aim_ended.connect(_on_card_aim_ended)
 	
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not targeting:
 		return
 	
@@ -53,7 +53,7 @@ func _on_card_aim_started(card: CardUI) -> void:
 	current_card = card
 
 
-func _on_card_aim_ended(card: CardUI) -> void:
+func _on_card_aim_ended(_card: CardUI) -> void:
 	targeting = false
 	card_arc.clear_points()
 	area_2d.position = Vector2.ZERO

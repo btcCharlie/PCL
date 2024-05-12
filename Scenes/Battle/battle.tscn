@@ -194,11 +194,14 @@ script = ExtResource("6_nuw5j")
 [node name="CardMoveUI" parent="BattleUI/Hand" instance=ExtResource("7_p3wcs")]
 layout_mode = 2
 move = ExtResource("8_jqecg")
+stats = ExtResource("6_jvgjy")
 
 [node name="CardMoveUI2" parent="BattleUI/Hand" instance=ExtResource("7_p3wcs")]
 layout_mode = 2
 move = ExtResource("8_jqecg")
+stats = ExtResource("6_jvgjy")
 
 [node name="CardMoveUI3" parent="BattleUI/Hand" instance=ExtResource("7_p3wcs")]
 layout_mode = 2
 move = ExtResource("9_6xmeg")
+stats = ExtResource("6_jvgjy")

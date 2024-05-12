@@ -4,7 +4,7 @@ class _interface:
 	pass
 
 class Damageable extends _interface:
-	func take_damage(damage: int):
+	func take_damage(_damage: int):
 		pass
 		
 
