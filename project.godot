@@ -42,10 +42,6 @@ window/stretch/mode="viewport"
 
 project/assembly_name="Pokeclone"
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg")
-
 [gui]
 
 theme/custom="res://ui/themes/default_theme.tres"

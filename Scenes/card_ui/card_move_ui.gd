@@ -20,14 +20,14 @@ const HOVER_STYLEBOX := preload("res://scenes/card_ui/move_card_hover_stylebox.t
 var parent: Control
 var tween: Tween
 var playable := true : set = _set_playable
-var disable := false
+var disabled := false
 
 
 func _ready() -> void:
-	Events.card_aim_started.connect(_on_card_drag_or_aiming_started)
-	Events.card_drag_started.connect(_on_card_drag_or_aiming_started)
-	Events.card_aim_ended.connect(_on_card_drag_or_aiming_ended)
-	Events.card_drag_ended.connect(_on_card_drag_or_aiming_ended)
+	Events.move_aim_started.connect(_on_card_drag_or_aiming_started)
+	Events.move_drag_started.connect(_on_card_drag_or_aiming_started)
+	Events.move_aim_ended.connect(_on_card_drag_or_aiming_ended)
+	Events.move_drag_ended.connect(_on_card_drag_or_aiming_ended)
 	card_state_machine.init(self)
 
 
@@ -78,13 +78,25 @@ func _set_stats(value: Stats) -> void:
 	stats.stats_changed.connect(_on_stats_changed)
 
 
-func _on_drop_point_detector_area_entered(area):
+func _on_drop_point_detector_area_entered(area) -> void:
 	if not targets.has(area):
 		targets.append(area)
 
 
-func _on_drop_point_detector_area_exited(area):
+func _on_drop_point_detector_area_exited(area) -> void:
 	targets.erase(area)
 
 
-func _on_card_drag_or_aiming_started
+func _on_card_drag_or_aiming_started(used_card: CardUI) -> void:
+	if used_card == self:
+		return
+	
+	disabled = true
+	
+	
+func _on_card_drag_or_aiming_ended(_card: CardUI) -> void:
+	disabled = false
+	
+	
+func _on_stats_changed():
+	pass

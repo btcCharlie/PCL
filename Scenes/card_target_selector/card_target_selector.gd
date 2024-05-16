@@ -77,3 +77,5 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	current_card.targets.erase(area)
 
 
+func _on_card_drag_or_aiming_ended():
+	pass
