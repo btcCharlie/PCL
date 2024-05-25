@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MoveSet" load_steps=3 format=3 uid="uid://bovqrdjt2l68i"]
+
+[ext_resource type="Resource" uid="uid://perhm5coxmrx" path="res://assets/moves/attack_tackle.tres" id="1_trgma"]
+[ext_resource type="Script" path="res://resources/move_set.gd" id="2_da7o5"]
+
+[resource]
+script = ExtResource("2_da7o5")
+moves = Array[Resource("res://resources/move.gd")]([ExtResource("1_trgma")])

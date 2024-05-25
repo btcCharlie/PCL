@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bvyqyvodhxgxc"]
+
+[ext_resource type="Texture2D" uid="uid://dmnh5xxe2xne0" path="res://Art/Imported/player_heart.png" id="1_5br10"]
+[ext_resource type="Script" path="res://assets/moves/skill_heal.gd" id="2_5lj1n"]
+
+[resource]
+script = ExtResource("2_5lj1n")
+id = "skill_heal"
+type = 1
+target = 0
+name = "Helping Hand"
+icon = ExtResource("1_5br10")
+tooltip_text = ""

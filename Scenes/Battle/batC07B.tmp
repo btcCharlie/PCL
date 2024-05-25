@@ -1,10 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://cme31m4og8mcw"]
 
 [ext_resource type="Texture2D" uid="uid://c35a718a7igl4" path="res://Art/rounded_rect_shaded_transparent.png" id="1_2id8t"]
-[ext_resource type="Theme" uid="uid://ct0ayhasjniej" path="res://ui/Themes/default_theme.tres" id="2_cv1e7"]
+[ext_resource type="Theme" uid="uid://ct0ayhasjniej" path="res://ui/themes/default_theme.tres" id="2_cv1e7"]
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Art/Imported/background.png" id="3_hd1ks"]
-[ext_resource type="PackedScene" uid="uid://cuy05qon3jo0a" path="res://scenes/enemy/enemy.tscn" id="4_s2me0"]
-[ext_resource type="Resource" uid="uid://c37846aaipf2w" path="res://assets/monsters/_test_monster_crab/crab_stats.tres" id="5_38ci4"]
+[ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://Art/Imported/tile_0110.png" id="5_ld4qd"]
 [ext_resource type="PackedScene" uid="uid://u486gtfkjv5m" path="res://scenes/player/ally_monster.tscn" id="5_o0ok8"]
 [ext_resource type="PackedScene" uid="uid://ceb38uao8h1nm" path="res://scenes/card_target_selector/card_target_selector.tscn" id="6_47rg2"]
 [ext_resource type="Resource" uid="uid://c102dsp71mowp" path="res://assets/monsters/_test_monster_golem/golem_stats.tres" id="6_jvgjy"]
@@ -28,6 +27,9 @@ vertical = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_txyuv"]
 size = Vector2(512, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yk5c"]
+size = Vector2(40, 40)
 
 [node name="Battle" type="Node2D"]
 
@@ -164,15 +166,23 @@ position = Vector2(256, 90)
 shape = SubResource("RectangleShape2D_txyuv")
 debug_color = Color(0, 0.6, 0.701961, 0.152941)
 
-[node name="Enemy" parent="." instance=ExtResource("4_s2me0")]
-position = Vector2(387, 132)
-stats = ExtResource("5_38ci4")
+[node name="Enemy" type="Area2D" parent="."]
+position = Vector2(428, 151)
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+scale = Vector2(2, 2)
+texture = ExtResource("5_ld4qd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource("RectangleShape2D_7yk5c")
 
 [node name="AllyMonster" parent="." instance=ExtResource("5_o0ok8")]
-position = Vector2(96, 127)
+position = Vector2(66, 169)
 stats = ExtResource("6_jvgjy")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("6_47rg2")]
+position = Vector2(428, 151)
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 
@@ -194,14 +204,11 @@ script = ExtResource("6_nuw5j")
 [node name="CardMoveUI" parent="BattleUI/Hand" instance=ExtResource("7_p3wcs")]
 layout_mode = 2
 move = ExtResource("8_jqecg")
-stats = ExtResource("6_jvgjy")
 
 [node name="CardMoveUI2" parent="BattleUI/Hand" instance=ExtResource("7_p3wcs")]
 layout_mode = 2
 move = ExtResource("8_jqecg")
-stats = ExtResource("6_jvgjy")
 
 [node name="CardMoveUI3" parent="BattleUI/Hand" instance=ExtResource("7_p3wcs")]
 layout_mode = 2
 move = ExtResource("9_6xmeg")
-stats = ExtResource("6_jvgjy")

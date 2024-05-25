@@ -1,10 +1,10 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://ct0ayhasjniej"]
 
-[ext_resource type="FontFile" uid="uid://cdpb8dgg4el8i" path="res://UI/Themes/joystix monospace.otf" id="1_arnk2"]
+[ext_resource type="FontFile" uid="uid://cdpb8dgg4el8i" path="res://ui/themes/joystix monospace.otf" id="1_arnk2"]
 
 [resource]
 default_font = ExtResource("1_arnk2")
-default_font_size = 12
+default_font_size = 10
 MarginContainer/constants/margin_bottom = 12
 MarginContainer/constants/margin_left = 12
 MarginContainer/constants/margin_right = 12

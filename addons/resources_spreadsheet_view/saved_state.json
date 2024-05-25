@@ -1,5 +1,9 @@
 {
   "hidden_columns": {
+    "res://Assets/ElementalTypes/": {
+      "resource_local_to_scene": true,
+      "resource_name": true
+    },
     "res://Resources/": {
       "resource_local_to_scene": true,
       "resource_name": true
@@ -16,7 +20,8 @@
   "recent_paths": [
     "res://Resources/ElementalTypes/",
     "res://Resources/",
-    "res://Resources/Monsters/"
+    "res://Resources/Monsters/",
+    "res://Assets/ElementalTypes/"
   ],
   "table_functions": {
     "filter": [

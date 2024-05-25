@@ -1,0 +1,109 @@
+[gd_scene load_steps=11 format=3 uid="uid://br658er6cpnr1"]
+
+[ext_resource type="Script" path="res://scenes/card_ui/card_move_ui.gd" id="1_oxwee"]
+[ext_resource type="Texture2D" uid="uid://dojlh80rte165" path="res://Art/Imported/tile_0107.png" id="2_rnhu1"]
+[ext_resource type="StyleBox" uid="uid://ddctys200w7rg" path="res://scenes/card_ui/move_card_base_stylebox.tres" id="2_th4mk"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_state_machine.gd" id="2_vf6ih"]
+[ext_resource type="Script" path="res://scenes/card_ui/states/card_base_state.gd" id="3_sk85t"]
+[ext_resource type="Script" path="res://scenes/card_ui/states/card_clicked_state.gd" id="4_nb3ge"]
+[ext_resource type="Script" path="res://scenes/card_ui/states/card_dragging_state.gd" id="5_3st5i"]
+[ext_resource type="Script" path="res://scenes/card_ui/states/card_released_state.gd" id="6_5q2s5"]
+[ext_resource type="Script" path="res://scenes/card_ui/states/card_aiming_state.gd" id="6_tyjn0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpsgt"]
+size = Vector2(50, 70)
+
+[node name="CardMoveUI" type="Control"]
+custom_minimum_size = Vector2(50, 70)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -462.0
+offset_bottom = -218.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oxwee")
+
+[node name="Panel" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_th4mk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 8
+text = "Attack"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("2_rnhu1")
+expand_mode = 4
+
+[node name="DropPointDetector" type="Area2D" parent="."]
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
+position = Vector2(25, 35)
+shape = SubResource("RectangleShape2D_rpsgt")
+
+[node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_vf6ih")
+initial_state = NodePath("CardBaseState")
+
+[node name="CardBaseState" type="Node" parent="CardStateMachine"]
+script = ExtResource("3_sk85t")
+
+[node name="CardClickedState" type="Node" parent="CardStateMachine"]
+script = ExtResource("4_nb3ge")
+state = 1
+
+[node name="CardDraggingState" type="Node" parent="CardStateMachine"]
+script = ExtResource("5_3st5i")
+state = 2
+
+[node name="CardAimingState" type="Node" parent="CardStateMachine"]
+script = ExtResource("6_tyjn0")
+state = 3
+
+[node name="CardReleasedState" type="Node" parent="CardStateMachine"]
+script = ExtResource("6_5q2s5")
+state = 4
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="DropPointDetector" to="." method="_on_drop_point_detector_area_entered"]
+[connection signal="area_exited" from="DropPointDetector" to="." method="_on_drop_point_detector_area_exited"]

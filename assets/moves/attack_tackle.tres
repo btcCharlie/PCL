@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://perhm5coxmrx"]
+
+[ext_resource type="Texture2D" uid="uid://bq4im540nk025" path="res://Art/Imported/tile_0106.png" id="2_1pf6k"]
+[ext_resource type="Script" path="res://assets/moves/attack_tackle.gd" id="2_806bm"]
+
+[resource]
+script = ExtResource("2_806bm")
+id = "attack_tackle"
+type = 0
+target = 3
+name = "Tackle"
+icon = ExtResource("2_1pf6k")
+tooltip_text = ""
