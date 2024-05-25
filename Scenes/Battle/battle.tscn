@@ -1,153 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://cme31m4og8mcw"]
+[gd_scene load_steps=6 format=3 uid="uid://cme31m4og8mcw"]
 
-[ext_resource type="Texture2D" uid="uid://c35a718a7igl4" path="res://Art/rounded_rect_shaded_transparent.png" id="1_2id8t"]
-[ext_resource type="Theme" uid="uid://ct0ayhasjniej" path="res://ui/Themes/default_theme.tres" id="2_cv1e7"]
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Art/Imported/background.png" id="3_hd1ks"]
 [ext_resource type="PackedScene" uid="uid://cuy05qon3jo0a" path="res://scenes/enemy/enemy.tscn" id="4_s2me0"]
 [ext_resource type="Resource" uid="uid://c37846aaipf2w" path="res://assets/monsters/_test_monster_crab/crab_stats.tres" id="5_38ci4"]
 [ext_resource type="PackedScene" uid="uid://u486gtfkjv5m" path="res://scenes/player/ally_monster.tscn" id="5_o0ok8"]
-[ext_resource type="PackedScene" uid="uid://ceb38uao8h1nm" path="res://scenes/card_target_selector/card_target_selector.tscn" id="6_47rg2"]
 [ext_resource type="Resource" uid="uid://c102dsp71mowp" path="res://assets/monsters/_test_monster_golem/golem_stats.tres" id="6_jvgjy"]
-[ext_resource type="Script" path="res://scenes/ui/hand.gd" id="6_nuw5j"]
-[ext_resource type="PackedScene" uid="uid://br658er6cpnr1" path="res://scenes/card_ui/card_move_ui.tscn" id="7_p3wcs"]
-[ext_resource type="Resource" uid="uid://perhm5coxmrx" path="res://assets/moves/attack_tackle.tres" id="8_jqecg"]
-[ext_resource type="Resource" uid="uid://bvyqyvodhxgxc" path="res://assets/moves/skill_heal.tres" id="9_6xmeg"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p841q"]
-draw_center = false
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-corner_detail = 20
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_y7cqj"]
-color = Color(0.454902, 0.454902, 0.454902, 1)
-thickness = 2
-vertical = true
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_txyuv"]
-size = Vector2(512, 180)
 
 [node name="Battle" type="Node2D"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="UI" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-metadata/_edit_lock_ = true
-
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/UI"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_p841q")
-metadata/_edit_lock_ = true
-
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/UI/PanelContainer"]
-layout_mode = 2
-texture = ExtResource("1_2id8t")
-patch_margin_left = 20
-patch_margin_top = 20
-patch_margin_right = 20
-patch_margin_bottom = 20
-metadata/_edit_lock_ = true
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/PanelContainer"]
-layout_mode = 2
-theme = ExtResource("2_cv1e7")
-metadata/_edit_lock_ = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/PanelContainer/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Button" type="Button" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "action_01"
-
-[node name="Button2" type="Button" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "action_01"
-
-[node name="Button3" type="Button" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "action_01"
-
-[node name="Button4" type="Button" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "action_01"
-
-[node name="VSeparator" type="VSeparator" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_y7cqj")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Button" type="Button" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-text = "action_01"
-
-[node name="Button2" type="Button" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-text = "action_01"
-
-[node name="Button3" type="Button" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-text = "action_01"
-
-[node name="Button4" type="Button" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-text = "action_01"
-
-[node name="VSeparator2" type="VSeparator" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_y7cqj")
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Button" type="Button" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer3"]
-layout_mode = 2
-text = "action_01"
-
-[node name="Button2" type="Button" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer3"]
-layout_mode = 2
-text = "action_01"
-
-[node name="Button3" type="Button" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer3"]
-layout_mode = 2
-text = "action_01"
-
-[node name="Button4" type="Button" parent="CanvasLayer/UI/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer3"]
-layout_mode = 2
-text = "action_01"
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.415686, 0.415686, 0.415686, 1)
@@ -155,14 +14,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_hd1ks")
 centered = false
 metadata/_edit_lock_ = true
-
-[node name="CardDropArea" type="Area2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
-position = Vector2(256, 90)
-shape = SubResource("RectangleShape2D_txyuv")
-debug_color = Color(0, 0.6, 0.701961, 0.152941)
 
 [node name="Enemy" parent="." instance=ExtResource("4_s2me0")]
 position = Vector2(387, 132)
@@ -172,36 +23,4 @@ stats = ExtResource("5_38ci4")
 position = Vector2(96, 127)
 stats = ExtResource("6_jvgjy")
 
-[node name="CardTargetSelector" parent="." instance=ExtResource("6_47rg2")]
-
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
-
-[node name="Hand" type="HBoxContainer" parent="BattleUI"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -125.0
-offset_top = -70.0
-offset_right = 125.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_vertical = 8
-alignment = 1
-script = ExtResource("6_nuw5j")
-
-[node name="CardMoveUI" parent="BattleUI/Hand" instance=ExtResource("7_p3wcs")]
-layout_mode = 2
-move = ExtResource("8_jqecg")
-stats = ExtResource("6_jvgjy")
-
-[node name="CardMoveUI2" parent="BattleUI/Hand" instance=ExtResource("7_p3wcs")]
-layout_mode = 2
-move = ExtResource("8_jqecg")
-stats = ExtResource("6_jvgjy")
-
-[node name="CardMoveUI3" parent="BattleUI/Hand" instance=ExtResource("7_p3wcs")]
-layout_mode = 2
-move = ExtResource("9_6xmeg")
-stats = ExtResource("6_jvgjy")
